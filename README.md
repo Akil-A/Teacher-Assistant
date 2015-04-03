@@ -1,14 +1,14 @@
 ## Teacher-Assistant
 
-##### This is a module of our project. For this module we have only implemented the admin section.
+This is a module of our project. For this module we have only implemented the admin section.
 
-#### Server requirements
+**Server requirements**
 
  * Glassfish 4
  * JDK 1.8
  * MySQL 5.6
 
-#### Setup
+**Setup**
 
 Please run [setup-database.sql](setup-database.sql)
 
