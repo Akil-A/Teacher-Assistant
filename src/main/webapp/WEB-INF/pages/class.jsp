@@ -53,7 +53,7 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <input type="submit" id="saveCourses" value="Save Courses"/>
+            <p><input type="submit" id="saveCourses" value="Save Courses"/></p>
         </form:form>
     </c:if>
 

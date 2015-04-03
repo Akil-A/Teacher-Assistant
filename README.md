@@ -34,11 +34,11 @@ And **persistence.xml**
 ### 5. Deploy Teacher-Assistant
 `asadmin> deploy Teacher-Assistant\target\test1.war`
 
-### 6. Open `localhost:8080\test1` in browser and login with username **admin** and password **leet**
+### 6. Open `localhost:8080\test1` in browser and login with username '**admin**' and password '**leet**'
 
 ***
 
-These tutorials made it possible
+Thanks to these tutorials
 
 * [Getting Started with Spring MVC, Hibernate and JSON](https://confluence.jetbrains.com/display/IntelliJIDEA/Getting+Started+with+Spring+MVC,+Hibernate+and+JSON)
 * [Spring Security Form Login Using Database](http://www.mkyong.com/spring-security/spring-security-form-login-using-database/)

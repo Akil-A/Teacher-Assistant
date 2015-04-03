@@ -33,7 +33,7 @@
 <body onload='document.loginForm.username.focus();'>
 	<h1 align="center">Admin Page - Please Login</h1>
 	<div id="login-box">
-		<h3>Login with Username and Password</h3>
+		<h3>Spring Security Login Form</h3>
 
 		<c:if test="${not empty error}">
 			<div class="error">${error}</div>

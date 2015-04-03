@@ -15,12 +15,9 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView defaultPage() {
-
         ModelAndView model = new ModelAndView();
-        model.addObject("title", "This is module of our project. At the moment only Admin login works");
-        model.setViewName("hello");
+        model.setViewName("login");
         return model;
-
     }
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
