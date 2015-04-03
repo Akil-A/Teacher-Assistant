@@ -10,9 +10,11 @@ This is a module of our project. For this module we have only implemented the ad
 
 **Setup**
 
-Please run [setup-database.sql](setup-database.sql)
+### 1. Choose **Download ZIP** from the Github sidebar.
 
-Then edit properties in **spring-database.xml**:
+### 2. Run [setup-database.sql](setup-database.sql)
+
+### 3. Edit properties in **spring-database.xml**:
 
     <property name="url" value="jdbc:mysql://localhost:3306/MY_SCHEMA" />
     <property name="username" value="USER" />
@@ -23,8 +25,16 @@ And **persistence.xml**
     <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/MY_SCHEMA" />
     <property name="hibernate.connection.username" value="USER" />
     <property name="hibernate.connection.password" value="PASSWORD" />
+    
+### 4. Start glassfish:
+* run `glassfish\bin\asadmin` from command-line
+* run `asadmin> start-domain domain1`)
 
-Finally, please login with username **admin** and password **leet**
+
+### 5. Deploy Teacher-Assistant
+`asadmin> deploy Teacher-Assistant\target\test1.war`
+
+### 6. Open `localhost:8080\test1` in browser and login with username **admin** and password **leet**
 
 ***
 
