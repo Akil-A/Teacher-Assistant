@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <title>Classes</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link href="<c:url value="/resources/style.css" />" rel="stylesheet">
 </head>
 <body>
     <h3>Classes</h3>
@@ -31,7 +32,7 @@
     </script>
 
     <c:if test="${!empty classes}">
-        <form:form method="post" action="class/saveCourses">
+        <form:form method="post" action="class/saveAll">
             <h3>Classes</h3>
             <table border="1" cellspacing="0" cellpadding="2" width="500" style="text-align: center">
                 <thead>
@@ -53,7 +54,7 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <p><input type="submit" id="saveCourses" value="Save Courses"/></p>
+            <p><input type="submit" id="saveAll" value="Save courses in classes" disabled/> <small>This feature is not finished :(</small></p>
         </form:form>
     </c:if>
 
