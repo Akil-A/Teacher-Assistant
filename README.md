@@ -18,8 +18,8 @@ We have used Spring MVC as a base framework, Hibernate to handle database entiti
 * save to `glassfish\bin\test1.war`
 
 #### 3. Start glassfish:
-* run `glassfish\bin\asadmin` from command-line
-* run `asadmin> start-domain domain1`
+1 run `glassfish\bin\asadmin` from command-line
+2 run `asadmin> start-domain domain1`
 
 #### 4. Deploy Teacher-Assistant
 * run `asadmin> deploy test1.war`
