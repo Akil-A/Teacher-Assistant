@@ -31,7 +31,7 @@
     </script>
 
     <c:if test="${!empty classes}">
-        <form:form method="post" action="class/saveCourses">
+        <form:form method="post" action="class/saveAll">
             <h3>Classes</h3>
             <table border="1" cellspacing="0" cellpadding="2" width="500" style="text-align: center">
                 <thead>
@@ -53,7 +53,7 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <p><input type="submit" id="saveCourses" value="Save Courses"/></p>
+            <p><input type="submit" id="saveAll" value="Save Classes"/></p>
         </form:form>
     </c:if>
 

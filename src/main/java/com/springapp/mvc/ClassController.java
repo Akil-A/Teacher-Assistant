@@ -31,4 +31,11 @@ public class ClassController {
 
         return "redirect:/class";
     }
+
+    @RequestMapping(value = "/class/saveAll", method = RequestMethod.POST)
+    public String saveAll(@ModelAttribute("class") Class c, BindingResult result) {
+        classServ.save(c);
+
+        return "redirect:/class";
+    }
 }

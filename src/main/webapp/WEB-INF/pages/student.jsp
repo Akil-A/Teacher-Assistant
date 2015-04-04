@@ -22,7 +22,7 @@
         <form:label path="lastName">Last Name:</form:label><br>
         <form:input path="lastName"/><br><br>
 
-        <form:label path="className">Class:</form:label><br>
+        <form:label path="className">Assign to class:</form:label><br>
         <form:select path="className">
             <form:option value="NONE" label="--- Select ---"/>
             <form:options items="${classList}" />

@@ -18,8 +18,8 @@ We have used Spring MVC as a base framework, Hibernate to handle database entiti
 * save to `glassfish\bin\test1.war`
 
 #### 3. Start glassfish:
-* run `glassfish\bin\asadmin` from command-line
-* run `asadmin> start-domain domain1`
+1. run `glassfish\bin\asadmin` from command-line
+2. run `asadmin> start-domain domain1`
 
 #### 4. Deploy Teacher-Assistant
 * run `asadmin> deploy test1.war`
@@ -35,6 +35,8 @@ We have used Spring MVC as a base framework, Hibernate to handle database entiti
     <property name="password" value="PASSWORD" />
     
 And **persistence.xml**
+
+* full path `glassfish\domains\domain1\applications\test1\META-INF\persistence.xml`
 
     <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/MY_SCHEMA" />
     <property name="hibernate.connection.username" value="USER" />
