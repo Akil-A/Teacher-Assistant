@@ -36,6 +36,8 @@ We have used Spring MVC as a base framework, Hibernate to handle database entiti
     
 And **persistence.xml**
 
+* full path `glassfish\domains\domain1\applications\test1\META-INF\persistence.xml`
+
     <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/MY_SCHEMA" />
     <property name="hibernate.connection.username" value="USER" />
     <property name="hibernate.connection.password" value="PASSWORD" />
