@@ -26,7 +26,6 @@ This is a module of our project. For this module we have only implemented the ad
 
 * full path `glassfish\domains\domain1\applications\test1\WEB-INF\spring-database.xml`
 
-
     <property name="url" value="jdbc:mysql://localhost:3306/MY_SCHEMA" />
     <property name="username" value="USER" />
     <property name="password" value="PASSWORD" />
