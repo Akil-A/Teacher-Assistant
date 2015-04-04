@@ -2,6 +2,8 @@
 
 This is a module of our project. For this module we have only implemented the admin section.
 
+We have used Spring MVC as a base framework, Hibernate to handle database entities and Spring Security for authentication.
+
 **Server requirements**
 
  * Glassfish 4
@@ -25,7 +27,8 @@ This is a module of our project. For this module we have only implemented the ad
 #### 5. Edit properties in **spring-database.xml**:
 
 * full path `glassfish\domains\domain1\applications\test1\WEB-INF\spring-database.xml`
-
+ 
+.
 
     <property name="url" value="jdbc:mysql://localhost:3306/MY_SCHEMA" />
     <property name="username" value="USER" />
@@ -45,7 +48,7 @@ And **persistence.xml**
 
 * [s198734 Ali El Hatri](mailto:s198734@stud.hioa.no)
 * [s181142 Akil Asghar](mailto:s181142@stud.hioa.no)
-* [s181322 Joakim Magnussen](mailto:s181322@stud.hioa.no) [@2](joakim-m@outlook.com)
+* [s181322 Joakim Magnussen](mailto:s181322@stud.hioa.no) [@2](mailto:joakim-m@outlook.com)
 
 Since we all check our mails at different time of day, please e-mail all three if there is a problem with the app.
 
