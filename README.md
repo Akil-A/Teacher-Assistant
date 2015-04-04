@@ -10,19 +10,19 @@ This is a module of our project. For this module we have only implemented the ad
 
 **Setup**
 
-### 1. Run [setup-database.sql](setup-database.sql) on your MySQL server
+#### 1. Run [setup-database.sql](setup-database.sql) on your MySQL server
 
-### 2. Download [test1.war](target/test1.war)
+#### 2. Download [test1.war](target/test1.war)
 * save to `glassfish\bin\test1.war`
 
-### 3. Start glassfish:
+#### 3. Start glassfish:
 * run `glassfish\bin\asadmin` from command-line
 * run `asadmin> start-domain domain1`
 
-### 4. Deploy Teacher-Assistant
+#### 4. Deploy Teacher-Assistant
 * run `asadmin> deploy test1.war`
 
-### 5. Edit properties in **spring-database.xml**:
+#### 5. Edit properties in **spring-database.xml**:
 
 * full path `glassfish\domains\domain1\applications\test1\WEB-INF\spring-database.xml`
 
@@ -39,7 +39,7 @@ And **persistence.xml**
 
 
 
-### 6. Open `localhost:8080/test1` in browser and login with username '**admin**' and password '**leet**'
+#### 6. Open `localhost:8080/test1` in browser and login with username '**admin**' and password '**leet**'
 
 ## Created by
 
