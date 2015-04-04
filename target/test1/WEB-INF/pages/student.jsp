@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <title>Students</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link href="<c:url value="/resources/style.css" />" rel="stylesheet">
 </head>
 
 <body>
@@ -22,7 +23,7 @@
         <form:label path="lastName">Last Name:</form:label><br>
         <form:input path="lastName"/><br><br>
 
-        <form:label path="className">Class:</form:label><br>
+        <form:label path="className">Assign to class:</form:label><br>
         <form:select path="className">
             <form:option value="NONE" label="--- Select ---"/>
             <form:options items="${classList}" />

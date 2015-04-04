@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Welcome to TeachAssist</title>
+    <link href="<c:url value="/resources/style.css" />" rel="stylesheet">
 </head>
 <body>
     <h1>Welcome to TeachAssist</h1>
