@@ -1,3 +1,5 @@
+USE MY_SCHEMA;
+
 CREATE TABLE ta_users (
   username VARCHAR(45) NOT NULL ,
   password VARCHAR(45) NOT NULL ,
