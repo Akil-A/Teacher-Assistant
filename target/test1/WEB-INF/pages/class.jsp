@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <title>Classes</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="<c:url value="/resources/jquery.color-2.1.2.min.js" />"></script>
     <link href="<c:url value="/resources/style.css" />" rel="stylesheet">
 </head>
 <body>
@@ -47,7 +48,7 @@
                     <td>${class.className}</td>
                     <td>
                     <c:forEach items="${courses}" var="course">
-                        <label><input type="checkbox" data-class="${class.classID}" value="${course.courseID}">${course.courseName}</label>
+                        <label><input class="toggleCourse" type="checkbox" data-class="${class.classID}" value="${course.courseID}">${course.courseName}</label>
                     </c:forEach>
                     </td>
                 </tr>
@@ -59,5 +60,19 @@
     </c:if>
 
     <p><a href="<c:url value="/main" />">Back to main</a></p>
+
+    <script>
+        $("input.toggleCourse").click(function(){
+            var _this = this;
+            var classID = $(this).data("class");
+            var courseID = $(this).val();
+
+            var d = {classID: classID, courseID: courseID};
+
+            alert(JSON.stringify(d));
+            /*$.post("<c:url value="/course/saveClasses" />", d).done(function(){
+            });*/
+        });
+    </script>
 </body>
 </html>

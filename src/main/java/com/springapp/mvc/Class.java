@@ -16,7 +16,7 @@ public class Class {
     @JoinTable(name="class_course",
             joinColumns={@JoinColumn(name="classID")},
             inverseJoinColumns={@JoinColumn(name="courseID")})
-    private List<Course> Courses;
+    public List<Course> Courses;
 
     public Class(){}
 

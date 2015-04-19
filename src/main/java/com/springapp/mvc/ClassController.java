@@ -38,4 +38,20 @@ public class ClassController {
 
         return "redirect:/class";
     }
+
+    @RequestMapping(value = "/class/addCourse", method = RequestMethod.POST)
+    public String addCourse() {
+        // TO-DO
+
+        Class c = classServ.findOne();
+        c.Courses.add();
+
+        return "";
+    }
+
+    @RequestMapping(value = "/class/addCourse", method = RequestMethod.POST)
+    public String removeCourse() {
+        // TO-DO
+        return "";
+    }
 }
