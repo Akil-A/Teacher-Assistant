@@ -15,6 +15,8 @@ public class CourseService {
         return rep.findAll();
     }
 
+    public Course findOne(Long courseID) { return rep.findOne(courseID); }
+
     @Transactional
     public Course save(Course c) {
         return rep.save(c);

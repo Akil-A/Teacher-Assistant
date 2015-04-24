@@ -14,10 +14,9 @@
 <body>
     <h3>Classes</h3>
     <form:form method="post" action="class/add" commandName="class">
-        <form:label path="className">Class name:</form:label><br>
-        <form:input path="className"/><br><br>
-
-        <input type="submit" id="addClass" value="Add Class"/>
+        <form:label path="className">Class name:</form:label>
+        <form:input path="className"/>
+        <input type="submit" id="addClass" value="Add to collection"/>
         <span id="error" style="color:red;display:none;">Please fill all fields.</span>
     </form:form>
 
@@ -55,7 +54,6 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <p><input type="submit" id="saveAll" value="Save courses in classes" disabled/> <small>This feature is not finished :(</small></p>
         </form:form>
     </c:if>
 
@@ -63,24 +61,25 @@
 
     <script>
         $("input.toggleCourse").change(function(e){
-            e.preventDefault();
-
             var $this = $(this);
-            var classID = $this.data("class");
-            var courseID = $this.val();
-            var d = {classID: classID, courseID: courseID};
-            if ($this.prop("checked")){
-                $.post("<c:url value="/class/removeCourse" />", d).done(function(){
-                    $this.prop("checked", false);
+            var d = {
+                classID: $this.data("class"),
+                courseID: $this.val()
+            };
+
+            if ($this.is(":checked")){
+                $.post("<c:url value="/class/addCourse" />/" + d.classID + "/" + d.courseID).done(function(){
+
                 }).fail(function(){
-                    alert("Could not remove this course");
-                });
-            }
-            else {
-                $.post("<c:url value="/class/addCourse" />", d).done(function(){
                     $this.prop("checked", false);
-                }).fail(function(){
                     alert("Could not add this course");
+                });
+            } else {
+                $.post("<c:url value="/class/removeCourse" />/" + d.classID + "/" + d.courseID).done(function(){
+
+                }).fail(function(){
+                    $this.prop("checked", true);
+                    alert("Could not remove this course");
                 });
             }
         });

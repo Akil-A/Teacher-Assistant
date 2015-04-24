@@ -2,7 +2,7 @@
 
 This is a module of our project. For this module we have only implemented the admin section.
 
-We have used Spring MVC as a base framework, Hibernate to handle database entities and Spring Security for authentication.
+We have used the following Spring MVC as a base framework, Hibernate to handle database entities and Spring Security for authentication.
 
 **Server requirements**
 
