@@ -68,15 +68,23 @@
             };
 
             if ($this.is(":checked")){
-                $.post("<c:url value="/class/addCourse" />/" + d.classID + "/" + d.courseID).done(function(){
-
+                $.ajax({
+                    type: "POST",
+                    url: "${pageContext.request.contextPath}/class/addCourse/" + d.classID + "/" + d.courseID,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('X-CSRF-Token', $("input[name=_csrf]").val());
+                    }
                 }).fail(function(){
                     $this.prop("checked", false);
                     alert("Could not add this course");
                 });
             } else {
-                $.post("<c:url value="/class/removeCourse" />/" + d.classID + "/" + d.courseID).done(function(){
-
+                $.ajax({
+                    type: "POST",
+                    url: "${pageContext.request.contextPath}/class/removeCourse/" + d.classID + "/" + d.courseID,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('X-CSRF-Token', $("input[name=_csrf]").val());
+                    }
                 }).fail(function(){
                     $this.prop("checked", true);
                     alert("Could not remove this course");

@@ -6,4 +6,56 @@
 body{
     font-family: Roboto, sans-serif;
     font-size: 14px;
+    text-align: center;
+}
+table{
+    margin: 0 auto;
+}
+
+input[type=checkbox],
+input[type=submit],
+label{
+    cursor: pointer;
+}
+
+#adminmenu, #adminmenu li{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#adminmenu li{
+    display: inline-block;
+    text-align: center;
+}
+
+#adminmenu li+li{
+    margin-left: 20px;
+}
+
+#adminmenu a{
+    background-color: #6495ed;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: block;
+}
+#adminmenu a:hover{
+    background-color: #7ca6ef;
+}
+#adminmenu a:active{
+    background-color: #5085e0;
+}
+
+#adminmenu i, #adminmenu span{
+    display: block;
+}
+
+#adminmenu i{
+    font-size: 180px;
+}
+
+#adminmenu span{
+    margin-top: 15px;
 }
