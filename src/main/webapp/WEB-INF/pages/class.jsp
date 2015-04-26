@@ -74,6 +74,10 @@
                     beforeSend: function (xhr) {
                         xhr.setRequestHeader('X-CSRF-Token', $("input[name=_csrf]").val());
                     }
+                }).done(function(){
+                    var ok = $("<span></span>").text("OK").css({"color": "green", "margin-left": "4px"});
+                    $this.parent().after(ok);
+                    ok.fadeOut(800);
                 }).fail(function(){
                     $this.prop("checked", false);
                     alert("Could not add this course");
@@ -85,6 +89,10 @@
                     beforeSend: function (xhr) {
                         xhr.setRequestHeader('X-CSRF-Token', $("input[name=_csrf]").val());
                     }
+                }).done(function(){
+                    var ok = $("<span></span>").text("OK").css({"color": "green", "margin-left": "4px"});
+                    $this.parent().after(ok);
+                    ok.fadeOut(800);
                 }).fail(function(){
                     $this.prop("checked", true);
                     alert("Could not remove this course");
