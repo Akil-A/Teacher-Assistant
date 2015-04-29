@@ -9,7 +9,7 @@ This is a module of our project. For this module we have implemented the admin s
 We have used Spring MVC as a base framework and design pattern, Hibernate for data management, Spring Security for authentication,
 and jQuery to handle some client requests and manipulation.
 
-**For a list of dependencies please see pom.xml.**
+**For a list of dependencies please see [pom.xml](pom.xml).**
 
 ## Setup
 
