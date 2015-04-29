@@ -21,7 +21,9 @@ public class Class {
             joinColumns={@JoinColumn(name="classID")},
             inverseJoinColumns={@JoinColumn(name="courseID")}
     )
-    public List<Course> Courses;
+    public List<Course> courses;
+
+    public List<Course> getCourses(){return courses;}
 
     public Class(){}
 

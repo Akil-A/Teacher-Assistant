@@ -1,50 +1,19 @@
 # Teacher-Assistant
 
-This is a module of our project. For this module we have only implemented the admin section.
+This is a module of our project. For this module we have implemented the admin section where you can:
 
-We have used the following Spring MVC as a base framework, Hibernate to handle database entities and Spring Security for authentication.
+* Authenticate with username and password
+* Manage students, classes and courses and
+* Assign students to classes and courses to classes
 
-**Server requirements**
+We have used Spring MVC as a base framework and design pattern, Hibernate for data management, Spring Security for authentication,
+and jQuery to handle some requests and view manipulation.
 
- * Glassfish 4
- * JDK 1.8
- * MySQL 5.6
+## Setup
 
-**Setup**
+Download [test1.war](target/test1.war). Deploy on your Java web server (we recommend glassfish).
+Login with username 'admin' and password 'leet'.
 
-#### 1. Run [setup-database.sql](setup-database.sql) on your MySQL server
-
-#### 2. Download [test1.war](target/test1.war)
-* save to `glassfish\bin\test1.war`
-
-#### 3. Start glassfish:
-1. run `glassfish\bin\asadmin` from command-line
-2. run `asadmin> start-domain domain1`
-
-#### 4. Deploy Teacher-Assistant
-* run `asadmin> deploy test1.war`
-
-#### 5. Edit properties in **spring-database.xml**:
-
-* full path `glassfish\domains\domain1\applications\test1\WEB-INF\spring-database.xml`
- 
-.
-
-    <property name="url" value="jdbc:mysql://localhost:3306/MY_SCHEMA" />
-    <property name="username" value="USER" />
-    <property name="password" value="PASSWORD" />
-    
-And **persistence.xml**
-
-* full path `glassfish\domains\domain1\applications\test1\META-INF\persistence.xml`
-
-    <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/MY_SCHEMA" />
-    <property name="hibernate.connection.username" value="USER" />
-    <property name="hibernate.connection.password" value="PASSWORD" />
-
-
-
-#### 6. Open `localhost:8080/test1` in browser and login with username '**admin**' and password '**leet**'
 
 ## Created by
 

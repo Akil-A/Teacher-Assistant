@@ -37,4 +37,8 @@ public class Course {
     public void setCourseCode(String courseCode) {
         this.courseCode = courseCode;
     }
+
+    public boolean equals(Course cou){
+        return this.courseID == cou.courseID;
+    }
 }

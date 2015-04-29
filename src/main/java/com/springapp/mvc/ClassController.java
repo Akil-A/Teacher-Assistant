@@ -1,5 +1,6 @@
 package com.springapp.mvc;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -29,28 +30,12 @@ public class ClassController {
     }
 
     @RequestMapping(value = "/class/addCourse/{classID}/{courseID}", method = RequestMethod.POST)
-    public @ResponseBody String addCourse(@PathVariable String classID, @PathVariable String courseID) {
-        StringBuilder sb = new StringBuilder();
-        //try{
-            Class c = classServ.findOne(Long.parseLong(classID));
-            c.Courses.add(courseServ.find(Long.parseLong(courseID)));
-            sb.append("{success:true}");
-        /*} catch (Exception e){
-            sb.append("{error:\"").append(e.getMessage()).append("\"}");
-        }*/
-        return sb.toString();
+    public @ResponseBody int addCourse(@PathVariable String classID, @PathVariable String courseID) {
+        return classServ.addCourseToClass(Long.parseLong(courseID), Long.parseLong(classID));
     }
 
     @RequestMapping(value = "/class/removeCourse/{classID}/{courseID}", method = RequestMethod.POST)
-    public @ResponseBody String removeCourse(@PathVariable String classID, @PathVariable String courseID) {
-        StringBuilder sb = new StringBuilder();
-        //try{
-            Class c = classServ.findOne(Long.parseLong(classID));
-            c.Courses.remove(courseServ.findOne(Long.parseLong(courseID)));
-            sb.append("{success:true}");
-        /*} catch (Exception e){
-            sb.append("{error:\"").append(e.getMessage()).append("\"}");
-        }*/
-        return sb.toString();
+    public @ResponseBody int removeCourse(@PathVariable String classID, @PathVariable String courseID) {
+        return classServ.removeCourseFromClass(Long.parseLong(courseID), Long.parseLong(classID));
     }
 }
