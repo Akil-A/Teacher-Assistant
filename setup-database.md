@@ -1,4 +1,4 @@
-# How to setup database for TeachAssist
+# How to setup a local database for TeachAssist
 
 Requires MySQL 5.6
 
