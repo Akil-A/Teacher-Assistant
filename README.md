@@ -11,7 +11,7 @@ and jQuery to handle some client requests and manipulation.
 
 ## Setup
 
-1. Make sure you are on HiOA WAN or VPN (required to access database).
+1. Make sure you are on HiOA WAN or VPN (required to access database). *if you don't have access to HiOA network please see [this page](setup-database.md)
 
 2. Download [test1.war](target/test1.war) save to glassfish\bin\test1.war
 
