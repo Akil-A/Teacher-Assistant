@@ -12,10 +12,15 @@ public class Class {
     @Basic
     private String className;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="class_course",
+    @ManyToMany(
+            fetch = FetchType.EAGER,
+            cascade = {CascadeType.ALL}
+    )
+    @JoinTable(
+            name="class_course",
             joinColumns={@JoinColumn(name="classID")},
-            inverseJoinColumns={@JoinColumn(name="courseID")})
+            inverseJoinColumns={@JoinColumn(name="courseID")}
+    )
     public List<Course> Courses;
 
     public Class(){}

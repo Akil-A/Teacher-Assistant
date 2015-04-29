@@ -32,7 +32,7 @@
     <link href="<c:url value="/resources/style.css" />" rel="stylesheet">
 </head>
 <body onload='document.loginForm.username.focus();'>
-	<h1 align="center">Admin Page - Please Login</h1>
+	<h1 align="center">Please Login</h1>
 	<div id="login-box">
 		<h3>Spring Security Login Form</h3>
 
