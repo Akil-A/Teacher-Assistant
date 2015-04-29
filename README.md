@@ -23,6 +23,7 @@ run asadmin> start-domain domain1
 
 5. Open localhost:8080/test1 in browser and login with username 'admin' and password 'leet'
 
+![Screenshot of front page](screenshot.jpg)
 
 ## Created by
 
