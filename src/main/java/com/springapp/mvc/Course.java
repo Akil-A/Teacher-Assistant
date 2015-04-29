@@ -41,4 +41,10 @@ public class Course {
     public boolean equals(Course cou){
         return this.courseID == cou.courseID;
     }
+
+    @Override
+    public boolean equals(Object o){
+        Course c = (Course)o;
+        return this.courseID == c.courseID;
+    }
 }

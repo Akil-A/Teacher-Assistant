@@ -46,9 +46,8 @@
                 <td>${class.className}</td>
                 <td>
                 <c:forEach items="${courses}" var="cou">
-                    ${class.courses[0]}|${cou}|${class.courses[0].equals(cou)}<br>
                     <label><input class="toggleCourse" type="checkbox" data-class="${class.classID}" value="${cou.courseID}"
-                    >${cou.courseName}</label>
+                    ${class.courses.contains(cou) ? ' checked' : ''}>${cou.courseName}</label>
                 </c:forEach>
                 </td>
             </tr>

@@ -13,7 +13,7 @@
         <li><a href="<c:url value="/class" />"><i class="fa fa-users"></i><span>Classes</span></a></li>
         <li><a href="<c:url value="/course" />"><i class="fa fa-book"></i><span>Courses</span></a></li>
     </ul>
-    <p>Logged in as ${pageContext.request.userPrincipal.name} | <a href="javascript:doLogout()"> Logout</a></p>
+    <p>Logged in as <span class="loginName">${pageContext.request.userPrincipal.name}</span> | <a href="javascript:doLogout()"> Logout</a></p>
     <form action="<c:url value="/j_spring_security_logout" />" method="post" id="logoutForm">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     </form>

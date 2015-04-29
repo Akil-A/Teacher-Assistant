@@ -7,7 +7,7 @@ This is a module of our project. For this module we have implemented the admin s
 * Assign students to classes and courses to classes
 
 We have used Spring MVC as a base framework and design pattern, Hibernate for data management, Spring Security for authentication,
-and jQuery to handle some requests and view manipulation.
+and jQuery to handle some client requests and manipulation.
 
 ## Setup
 
