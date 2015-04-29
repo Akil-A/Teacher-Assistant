@@ -14,6 +14,10 @@
         <li><a href="<c:url value="/course" />"><i class="fa fa-book"></i><span>Courses</span></a></li>
     </ul>
     <p>Logged in as <span class="loginName">${pageContext.request.userPrincipal.name}</span> | <a href="javascript:doLogout()"> Logout</a></p>
+    <div id="description">
+        <p>Class diagram for reference:</p>
+        <p><img src="<c:url value="/resources/ClassDiagram.png" />" alt="Class diagram"></p>
+    </div>
     <form action="<c:url value="/j_spring_security_logout" />" method="post" id="logoutForm">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     </form>

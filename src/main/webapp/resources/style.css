@@ -63,3 +63,13 @@ label{
 span.loginName{
     background-color: #96ffd8;
 }
+
+div#description{
+    display: inline-block;
+    border: 1px dashed #bbb;
+    padding-top: 12px;
+    background-color: #eee;
+}
+div#description p{
+    margin:0;
+}

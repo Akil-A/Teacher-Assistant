@@ -11,15 +11,24 @@ and jQuery to handle some client requests and manipulation.
 
 ## Setup
 
-Download [test1.war](target/test1.war). Deploy on your Java web server (we recommend glassfish).
-Login with username 'admin' and password 'leet'.
+1. Make sure you are on HiOA WAN or VPN (required to access database).
+
+2. Download [test1.war](target/test1.war) save to glassfish\bin\test1.war
+
+3. Start glassfish:
+run glassfish\bin\asadmin from command-line
+run asadmin> start-domain domain1
+
+4. Deploy Teacher-Assistant: run asadmin> deploy test1.war
+
+5. Open localhost:8080/test1 in browser and login with username 'admin' and password 'leet'
 
 
 ## Created by
 
 * [s198734 Ali El Hatri](mailto:s198734@stud.hioa.no)
 * [s181142 Akil Asghar](mailto:s181142@stud.hioa.no)
-* [s181322 Joakim Magnussen](mailto:s181322@stud.hioa.no) [@2](mailto:joakim-m@outlook.com)
+* [s181322 Joakim Magnussen](mailto:s181322@stud.hioa.no) [2](mailto:joakim-m@outlook.com)
 
 Since we all check our mails at different time of day, please e-mail all three if there is a problem with the app.
 
