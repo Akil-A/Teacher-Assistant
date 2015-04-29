@@ -9,6 +9,8 @@ This is a module of our project. For this module we have implemented the admin s
 We have used Spring MVC as a base framework and design pattern, Hibernate for data management, Spring Security for authentication,
 and jQuery to handle some client requests and manipulation.
 
+**For a list of dependencies please see pom.xml.**
+
 ## Setup
 
 1. Make sure you are on HiOA WAN or VPN (required to access database). *if you don't have access to HiOA network please see [this page](setup-database.md)
