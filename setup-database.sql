@@ -17,7 +17,7 @@ CREATE TABLE ta_user_roles (
     REFERENCES ta_users (username));
 
 INSERT INTO ta_users(username,password,enabled)
-  VALUES ('admin','leet', TRUE);
+  VALUES ('teacher1','leet', TRUE);
 
 INSERT INTO ta_user_roles (username, ROLE)
-  VALUES ('admin', 'ROLE_ADMIN');
+  VALUES ('teacher1', 'ROLE_ADMIN');
