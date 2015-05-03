@@ -4,8 +4,6 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <properties>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
-            <!--<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/s181322" />-->
-            <!--<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/test" />-->
             <property name="hibernate.connection.url" value="jdbc:mysql://student.cs.hioa.no:3306/s181322" />
             <property name="hibernate.connection.username" value="s181322" />
             <property name="hibernate.connection.password" value="" />

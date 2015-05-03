@@ -47,11 +47,11 @@
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			<table>
 				<tr>
-					<td>User:</td>
+					<td>User <small>(teacher1)</small></td>
 					<td><input type="text" name="username"></td>
 				</tr>
 				<tr>
-					<td>Password:</td>
+					<td>Password <small>(leet)</small></td>
 					<td><input type="password" name="password" /></td>
 				</tr>
 				<tr>
