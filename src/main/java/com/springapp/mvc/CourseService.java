@@ -15,6 +15,16 @@ public class CourseService {
         return rep.findAll();
     }
 
+    public Course findOne(Long courseID) { return rep.findOne(courseID); }
+
+    public Course find(Long courseID){
+        for (Course c : rep.findAll())
+            if (c.getCourseID() == courseID)
+                return c;
+
+        return null;
+    }
+
     @Transactional
     public Course save(Course c) {
         return rep.save(c);

@@ -24,10 +24,10 @@
     </form:form>
 
     <script>
-        var regex = /^[a-zA-Z0-9]+$/;
+        var regex = /^[a-zA-Z0-9 ]+$/;
         $("#addCourse").click(function(event){
-            var courseCode = $("#courseCode").val(),
-                    courseName = $("#courseName").val();
+            var courseCode = $("#courseCode").val();
+            var courseName = $("#courseName").val();
             if (!regex.test(courseCode) || !regex.test(courseName)){
                 $("#error").show();
                 event.preventDefault();

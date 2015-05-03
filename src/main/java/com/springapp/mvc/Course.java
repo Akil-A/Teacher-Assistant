@@ -37,4 +37,14 @@ public class Course {
     public void setCourseCode(String courseCode) {
         this.courseCode = courseCode;
     }
+
+    public boolean equals(Course cou){
+        return this.courseID == cou.courseID;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        Course c = (Course)o;
+        return this.courseID == c.courseID;
+    }
 }

@@ -8,15 +8,15 @@
     <meta charset="utf-8">
     <title>Classes</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="<c:url value="/resources/jquery.color-2.1.2.min.js" />"></script>
     <link href="<c:url value="/resources/style.css" />" rel="stylesheet">
 </head>
 <body>
     <h3>Classes</h3>
     <form:form method="post" action="class/add" commandName="class">
-        <form:label path="className">Class name:</form:label><br>
-        <form:input path="className"/><br><br>
-
-        <input type="submit" id="addClass" value="Add Class"/>
+        <form:label path="className">Class name:</form:label>
+        <form:input path="className"/>
+        <input type="submit" id="addClass" value="Add to collection"/>
         <span id="error" style="color:red;display:none;">Please fill all fields.</span>
     </form:form>
 
@@ -32,32 +32,72 @@
     </script>
 
     <c:if test="${!empty classes}">
-        <form:form method="post" action="class/saveAll">
-            <h3>Classes</h3>
-            <table border="1" cellspacing="0" cellpadding="2" width="500" style="text-align: center">
-                <thead>
-                <tr>
-                    <th>Class name</th>
-                    <th>Class has course</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${classes}" var="class">
-                <tr>
-                    <td>${class.className}</td>
-                    <td>
-                    <c:forEach items="${courses}" var="course">
-                        <label><input type="checkbox" data-class="${class.classID}" value="${course.courseID}">${course.courseName}</label>
-                    </c:forEach>
-                    </td>
-                </tr>
+        <h3>Assign courses to classes</h3>
+        <table border="1" cellspacing="0" cellpadding="2" width="500" style="text-align: center">
+            <thead>
+            <tr>
+                <th>Class name</th>
+                <th>Class has course</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${classes}" var="class">
+            <tr>
+                <td>${class.className}</td>
+                <td>
+                <c:forEach items="${courses}" var="cou">
+                    <label><input class="toggleCourse" type="checkbox" data-class="${class.classID}" value="${cou.courseID}"
+                    ${class.courses.contains(cou) ? ' checked' : ''}>${cou.courseName}</label>
                 </c:forEach>
-                </tbody>
-            </table>
-            <p><input type="submit" id="saveAll" value="Save courses in classes" disabled/> <small>This feature is not finished :(</small></p>
-        </form:form>
+                </td>
+            </tr>
+            </c:forEach>
+            </tbody>
+        </table>
     </c:if>
 
     <p><a href="<c:url value="/main" />">Back to main</a></p>
+
+    <script>
+        $("input.toggleCourse").change(function(e){
+            var $this = $(this);
+            var d = {
+                classID: $this.data("class"),
+                courseID: $this.val()
+            };
+
+            if ($this.is(":checked")){
+                $.ajax({
+                    type: "POST",
+                    url: "${pageContext.request.contextPath}/class/addCourse/" + d.classID + "/" + d.courseID,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('X-CSRF-Token', $("input[name=_csrf]").val());
+                    }
+                }).done(function(){
+                    var ok = $("<span></span>").text("Saved").css({"color": "green", "margin-left": "4px"});
+                    $this.parent().after(ok);
+                    ok.fadeOut(800);
+                }).fail(function(){
+                    $this.prop("checked", false);
+                    alert("Could not add this course");
+                });
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "${pageContext.request.contextPath}/class/removeCourse/" + d.classID + "/" + d.courseID,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('X-CSRF-Token', $("input[name=_csrf]").val());
+                    }
+                }).done(function(){
+                    var ok = $("<span></span>").text("Saved").css({"color": "green", "margin-left": "4px"});
+                    $this.parent().after(ok);
+                    ok.fadeOut(800);
+                }).fail(function(){
+                    $this.prop("checked", true);
+                    alert("Could not remove this course");
+                });
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,12 +1,11 @@
 package com.springapp.mvc;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -21,21 +20,22 @@ public class ClassController {
         model.addAttribute("class", new Class());
         model.addAttribute("classes", classServ.findAll());
         model.addAttribute("courses", courseServ.findAll());
-
         return "class";
     }
 
     @RequestMapping(value = "/class/add", method = RequestMethod.POST)
     public String addClass(@ModelAttribute("class") Class c, BindingResult result) {
         classServ.save(c);
-
         return "redirect:/class";
     }
 
-    @RequestMapping(value = "/class/saveAll", method = RequestMethod.POST)
-    public String saveAll(@ModelAttribute("class") Class c, BindingResult result) {
-        classServ.save(c);
+    @RequestMapping(value = "/class/addCourse/{classID}/{courseID}", method = RequestMethod.POST)
+    public @ResponseBody int addCourse(@PathVariable String classID, @PathVariable String courseID) {
+        return classServ.addCourseToClass(Long.parseLong(courseID), Long.parseLong(classID));
+    }
 
-        return "redirect:/class";
+    @RequestMapping(value = "/class/removeCourse/{classID}/{courseID}", method = RequestMethod.POST)
+    public @ResponseBody int removeCourse(@PathVariable String classID, @PathVariable String courseID) {
+        return classServ.removeCourseFromClass(Long.parseLong(courseID), Long.parseLong(classID));
     }
 }

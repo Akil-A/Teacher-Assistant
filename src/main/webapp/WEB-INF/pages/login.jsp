@@ -32,7 +32,7 @@
     <link href="<c:url value="/resources/style.css" />" rel="stylesheet">
 </head>
 <body onload='document.loginForm.username.focus();'>
-	<h1 align="center">Admin Page - Please Login</h1>
+	<h1 align="center">Please Login</h1>
 	<div id="login-box">
 		<h3>Spring Security Login Form</h3>
 
@@ -47,11 +47,11 @@
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			<table>
 				<tr>
-					<td>User:</td>
+					<td>User <small>(teacher1)</small></td>
 					<td><input type="text" name="username"></td>
 				</tr>
 				<tr>
-					<td>Password:</td>
+					<td>Password <small>(leet)</small></td>
 					<td><input type="password" name="password" /></td>
 				</tr>
 				<tr>
