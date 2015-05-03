@@ -37,7 +37,7 @@ Screenshot from front page.
 ## Created by
 
 * [s198734 Ali El Hatri](mailto:s198734@stud.hioa.no)
-* [s181142 Akil Asghar](mailto:s181142@stud.hioa.no)
+* [s181142 Akil Asghar](mailto:s181142@stud.hioa.no) [2](mailto:mail@asghara.com)
 * [s181322 Joakim Magnussen](mailto:s181322@stud.hioa.no) [2](mailto:joakim-m@outlook.com)
 
 Since we all check our mails at different time of day, please e-mail all three if there is a problem with the app.
