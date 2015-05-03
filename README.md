@@ -1,56 +1,44 @@
 # Teacher-Assistant
 
-This is a module of our project. For this module we have only implemented the admin section.
+This is a module of our project. Two of the requirements in our specification were:
 
-We have used Spring MVC as a base framework, Hibernate to handle database entities and Spring Security for authentication.
+* Teacher can login with user/passwd.
+* Teacher or another higher user role can create a register of classes, courses and students.
 
-**Server requirements**
+These are the requirements we have implemented.
 
- * Glassfish 4
- * JDK 1.8
- * MySQL 5.6
+These frameworks are a part of the application:
 
-**Setup**
+* Spring MVC as a base framework and design pattern
+* Hibernate for data management
+* Spring Security for authentication
+* jQuery for client validation and AJAX requests
 
-#### 1. Run [setup-database.sql](setup-database.sql) on your MySQL server
+**For a list of dependencies please see [pom.xml](pom.xml).**
 
-#### 2. Download [test1.war](target/test1.war)
-* save to `glassfish\bin\test1.war`
+## Setup
 
-#### 3. Start glassfish:
-1. run `glassfish\bin\asadmin` from command-line
-2. run `asadmin> start-domain domain1`
+**Only tested on glassfish 4**
 
-#### 4. Deploy Teacher-Assistant
-* run `asadmin> deploy test1.war`
+1. Make sure you are on HiOA WAN or VPN (required to access database). \*\*if you don't have access to HiOA network please see [this page](setup-database.md)
 
-#### 5. Edit properties in **spring-database.xml**:
+2. Download [test1.war](target/test1.war) save to glassfish\bin\test1.war
 
-* full path `glassfish\domains\domain1\applications\test1\WEB-INF\spring-database.xml`
- 
-.
+3. Start glassfish: run **'glassfish\bin\asadmin'** from command-line then run **'asadmin> start-domain domain1'**
 
-    <property name="url" value="jdbc:mysql://localhost:3306/MY_SCHEMA" />
-    <property name="username" value="USER" />
-    <property name="password" value="PASSWORD" />
-    
-And **persistence.xml**
+4. Deploy Teacher-Assistant: run **'asadmin> deploy test1.war'**
 
-* full path `glassfish\domains\domain1\applications\test1\META-INF\persistence.xml`
+5. Open **localhost:8080/test1** in browser and login with username **'teacher1'** and password **'leet'**
 
-    <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/MY_SCHEMA" />
-    <property name="hibernate.connection.username" value="USER" />
-    <property name="hibernate.connection.password" value="PASSWORD" />
+Screenshot from front page.
 
-
-
-#### 6. Open `localhost:8080/test1` in browser and login with username '**admin**' and password '**leet**'
+![Screenshot of front page](screenshot.png)
 
 ## Created by
 
 * [s198734 Ali El Hatri](mailto:s198734@stud.hioa.no)
-* [s181142 Akil Asghar](mailto:s181142@stud.hioa.no) [@2](mailto:mail@asghara.com)
-* [s181322 Joakim Magnussen](mailto:s181322@stud.hioa.no) [@2](mailto:joakim-m@outlook.com)
+* [s181142 Akil Asghar](mailto:s181142@stud.hioa.no) [2](mailto:mail@asghara.com)
+* [s181322 Joakim Magnussen](mailto:s181322@stud.hioa.no) [2](mailto:joakim-m@outlook.com)
 
 Since we all check our mails at different time of day, please e-mail all three if there is a problem with the app.
 
