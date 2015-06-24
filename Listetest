@@ -1,0 +1,60 @@
+import java.util.*;
+
+import javax.swing.JOptionPane;
+public class ListeTest 
+{
+	public static Scanner input = new Scanner(System.in);
+	public static void kjør(Person[] PersonListe, Person test)
+	{
+		int go = 0;
+		int i = 0;
+		while(go != JOptionPane.NO_OPTION)
+		{
+			if(i < PersonListe.length)
+			{
+				test = new Person();
+				String f = JOptionPane.showInputDialog("Skriv inn fornavn");
+				String e = JOptionPane.showInputDialog("Skriv inn etternavn");
+				int a = Integer.parseInt(JOptionPane.showInputDialog("Skriv inn alder"));
+				int t = Integer.parseInt(JOptionPane.showInputDialog("Skriv inn tlf"));
+				test.reg(f, e, a, t);
+				PersonListe[i] = test;
+				i++;
+				go = JOptionPane.showOptionDialog(null, "Vil du fortsette?", 
+						"Fortsettelse", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, 
+						null, null);
+			}
+			else
+			{
+				System.out.println("Arrayet er fullt, avslutter\n\n");
+				break;
+			}
+		}
+	}
+	public static void main(String... args)
+	{
+		boolean valg = false;
+		Person[] PersonListe = new Person[3];
+		Person test = null;
+		int i = 0;
+		int svar = JOptionPane.showOptionDialog(null, "Vil du ta i bruk listen?", 
+				"Personliste", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+		if(svar == JOptionPane.YES_OPTION)
+		{
+			valg = true;
+		}
+		if(valg == true)
+		{
+			kjør(PersonListe,test);
+		}
+		while(PersonListe[i] != null)
+		{
+			System.out.println(PersonListe[i]);
+			i++;
+			if(i >= PersonListe.length)
+			{
+				break;
+			}
+		}
+	}
+}
